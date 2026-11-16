@@ -49,11 +49,11 @@ export default function TermsOfService() {
           </h2>
           <p>
             While we strive to provide accurate descriptions of our agricultural
-            commodities (Coconuts and Jengkol), natural products are subject to
-            slight variations in size, weight, and color. All grading and
-            quality control standards will be explicitly detailed in the final
-            Sales Contract and verified by independent surveyors (e.g., SGS)
-            when requested.
+            commodities (Coconuts), natural products are subject to slight
+            variations in size, weight, and color. All grading and quality
+            control standards will be explicitly detailed in the final Sales
+            Contract and verified by independent surveyors (e.g., SGS) when
+            requested.
           </p>
 
           <h2 className="text-xl font-bold text-slate-900 mt-8 mb-4">

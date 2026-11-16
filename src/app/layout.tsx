@@ -11,8 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Recima Maju Jaya Sukses - Export & Logistics",
-  description:
-    "Exporting premium coconuts and jengkol with reliable global logistics.",
+  description: "Exporting premium coconuts with reliable global logistics.",
 };
 
 export default function RootLayout({

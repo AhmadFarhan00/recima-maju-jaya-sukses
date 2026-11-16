@@ -20,7 +20,7 @@ export default function Footer() {
             <p className="text-sm leading-relaxed mb-6 text-slate-600">
               Your reliable partner in agricultural trading and global
               logistics. We ensure seamless supply chains for Indonesia&apos;s
-              finest coconuts and jengkol.
+              finest coconuts.
             </p>
 
             {/* Social Media Icons */}
@@ -152,6 +152,14 @@ export default function Footer() {
                   className="hover:text-green-600 transition-colors font-medium"
                 >
                   Semi-Husked Coconuts
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products"
+                  className="hover:text-green-600 transition-colors font-medium"
+                >
+                  Full Husked
                 </Link>
               </li>
             </ul>
