@@ -1,155 +1,122 @@
 import Link from "next/link";
+import Image from "next/image";
 
-export default function About() {
+export default function AboutPage() {
   return (
-    <main className="flex min-h-screen flex-col bg-slate-50 pt-32 pb-16 text-slate-900">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
-        <div className="text-center mb-20">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
-            About Recima Maju Jaya Sukses
+    <main className="min-h-screen bg-slate-50 pt-28 pb-20 px-6 md:px-16 text-slate-900">
+      <div className="max-w-7xl mx-auto">
+        {/* Header Section */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-xs font-bold text-green-600 uppercase tracking-widest bg-green-50 px-3 py-1.5 rounded-full border border-green-200">
+            Corporate Profile
+          </span>
+          <h1 className="text-3xl md:text-5xl font-extrabold mt-4 mb-4 tracking-tight">
+            About PT. Recima Maju Jaya Sukses
           </h1>
-          <p className="text-slate-600 max-w-3xl mx-auto text-lg leading-relaxed">
-            Connecting Indonesia's fertile lands to the global market. We are a
-            premier export and logistics company specializing in high-quality
-            agricultural commodities.
+          <p className="text-slate-600 text-base md:text-lg leading-relaxed">
+            Leading the Indonesian agricultural export sector with strict
+            quality control, transparent supply chain, and dedication to global
+            coconut distribution.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24">
-          <div className="bg-white shadow-sm rounded-2xl h-80 md:h-full min-h-[350px] flex items-center justify-center border border-slate-200 relative overflow-hidden group">
-            <span className="text-slate-400 font-bold">
-              Image: Warehouse / Plantation
-            </span>
-            <div className="absolute inset-0 bg-green-600/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          </div>
-
-          <div>
-            <h2 className="text-3xl font-extrabold mb-6 text-slate-900">
-              Our Mission & Operations
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+          <div className="space-y-6 text-slate-600 text-base md:text-lg leading-relaxed">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900">
+              Connecting Indonesian Coconut Plantations to Global Markets
             </h2>
-            <p className="text-slate-600 mb-6 leading-relaxed font-medium">
-              Established with a vision to elevate Indonesian agriculture,
-              Recima Maju Jaya Sukses bridges the gap between local farmers and
-              international buyers. We focus primarily on premium whole
-              coconuts, semi-husked coconuts, and grade-A jengkol.
+            <p>
+              Founded with a strong commitment to excellence,{" "}
+              <strong>PT. Recima Maju Jaya Sukses</strong> specializes in the
+              collection, processing, and international export of premium-grade
+              Indonesian coconuts. We work side-by-side with local farmers to
+              ensure sustainable harvesting and exceptional kernel quality.
             </p>
-            <p className="text-slate-600 mb-8 leading-relaxed font-medium">
-              By managing our own supply chain and warehouse facilities near
-              Jakarta's main ports, we ensure that every container shipped meets
-              strict international phytosanitary standards and arrives safely at
-              its destination.
+            <p>
+              Our operations cover the entire supply chain—from direct
+              plantation sourcing, meticulous sorting in our modern warehouses,
+              to managing complex international logistics and customs
+              documentation (Phytosanitary, COO, Bill of Lading).
             </p>
-
-            <div className="grid grid-cols-2 gap-6">
-              <div className="border-l-4 border-green-500 pl-4">
-                <h4 className="text-3xl font-extrabold text-slate-900 mb-1">
-                  10+
-                </h4>
-                <p className="text-sm font-bold text-slate-500 uppercase tracking-wider">
-                  Years Experience
-                </p>
-              </div>
-              <div className="border-l-4 border-green-500 pl-4">
-                <h4 className="text-3xl font-extrabold text-slate-900 mb-1">
-                  25+
-                </h4>
-                <p className="text-sm font-bold text-slate-500 uppercase tracking-wider">
-                  Countries Reached
-                </p>
-              </div>
+          </div>
+          {/* Bagian Kanan: 2 Foto Perusahaan Kotak Penuh */}
+          <div className="w-full grid grid-cols-2 gap-4 md:gap-6 items-center">
+            <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-md bg-slate-100 group">
+              <Image
+                src="/plantation.jpeg"
+                alt="Plantation Sourcing - PT. Recima Maju Jaya Sukses"
+                fill
+                className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              />
             </div>
 
-            <div className="mt-10">
-              <Link
-                href="/contact"
-                className="inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-3.5 rounded-lg font-bold transition-all shadow-md shadow-green-600/20"
-              >
-                Partner With Us
-              </Link>
+            <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-md bg-slate-100 mt-6 md:mt-10 group">
+              <Image
+                src="/warehouse.jpeg"
+                alt="Warehouse Sorting - PT. Recima Maju Jaya Sukses"
+                fill
+                className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              />
             </div>
           </div>
         </div>
 
-        <div className="bg-white border border-slate-200 shadow-sm rounded-2xl p-10 md:p-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-extrabold text-slate-900">
-              Our Core Strengths
-            </h2>
+        {/* Vision & Mission Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+          <div className="bg-white border border-slate-200 p-8 md:p-10 rounded-3xl shadow-sm">
+            <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center font-bold text-xl mb-6">
+              01
+            </div>
+            <h3 className="text-2xl font-bold mb-4 text-slate-900">
+              Our Vision
+            </h3>
+            <p className="text-slate-600 leading-relaxed">
+              To become the most trusted and reliable global supplier of
+              Indonesian coconut products, recognized for uncompromised quality,
+              integrity, and sustainable trade practices.
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-            <div>
-              <div className="bg-green-50 border border-green-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-green-600 shadow-sm transform rotate-3">
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">
-                Uncompromising Quality
-              </h3>
-              <p className="text-slate-600 text-sm font-medium">
-                Strict sorting and grading processes before container stuffing
-                to ensure zero defects.
-              </p>
+
+          <div className="bg-white border border-slate-200 p-8 md:p-10 rounded-3xl shadow-sm">
+            <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center font-bold text-xl mb-6">
+              02
             </div>
-            <div>
-              <div className="bg-green-50 border border-green-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-green-600 shadow-sm -rotate-3">
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">
-                Global Logistics
-              </h3>
-              <p className="text-slate-600 text-sm font-medium">
-                Seamless freight forwarding via FCL (Full Container Load) with
-                complete export documents.
-              </p>
-            </div>
-            <div>
-              <div className="bg-green-50 border border-green-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-green-600 shadow-sm rotate-3">
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">
-                Farmer Empowerment
-              </h3>
-              <p className="text-slate-600 text-sm font-medium">
-                Working directly with local plantations to ensure fair trade and
-                sustainable agriculture.
-              </p>
-            </div>
+            <h3 className="text-2xl font-bold mb-4 text-slate-900">
+              Our Mission
+            </h3>
+            <ul className="space-y-3 text-slate-600">
+              <li className="flex items-start gap-2">
+                ✓ Delivering export-grade coconuts that meet international
+                phytosanitary standards.
+              </li>
+              <li className="flex items-start gap-2">
+                ✓ Empowering local farmers through fair partnerships and
+                transparent pricing.
+              </li>
+              <li className="flex items-start gap-2">
+                ✓ Providing seamless B2B logistics with timely container
+                shipments worldwide.
+              </li>
+            </ul>
           </div>
+        </div>
+
+        {/* CTA Banner */}
+        <div className="bg-[#0a0a0a] text-white rounded-3xl p-10 md:p-16 text-center">
+          <h2 className="text-2xl md:text-4xl font-extrabold mb-4">
+            Ready to Import Premium Coconuts?
+          </h2>
+          <p className="text-slate-400 max-w-2xl mx-auto mb-8 text-sm md:text-base">
+            Partner with us for reliable FCL shipments, competitive pricing, and
+            flexible packaging solutions tailored to your business needs.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-xl transition-colors"
+          >
+            Contact Our Sales Team
+          </Link>
         </div>
       </div>
     </main>

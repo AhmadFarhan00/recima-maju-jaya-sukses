@@ -1,38 +1,43 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   const products = [
     {
       id: 1,
       name: "Fresh Whole Coconuts",
-      desc: "Premium grade whole coconuts sourced directly from top plantations. High water content, thick meat, and carefully sorted for export.",
+      desc: "Fresh mature whole coconuts with full husk intact. Sourced directly from top plantations, high water content, and thick white meat, carefully sorted for export.",
       tag: "Top Export",
+      image: "/wholeCoconnut.jpeg", // <-- Sesuaikan dengan nama file di folder public
     },
     {
       id: 2,
       name: "Semi-Husked Coconuts",
-      desc: "Fresh coconuts with partially removed husks for optimal shelf-life and efficient container loading. Ideal for industrial and retail markets.",
+      desc: "Coconuts with partially removed husks designed for optimal shelf-life and maximum container loading efficiency. Highly demanded by global industrial processors.",
       tag: "Best Value",
+      image: "/semiHusked.jpeg", // <-- Ubah jadi semiHusked.jpeg
     },
     {
       id: 3,
-      name: "Premium Jengkol (Dogfruit)",
-      desc: "Fresh, mature, and hand-selected Jengkol (Archidendron pauciflorum). Cleaned and packed securely to maintain quality during transit.",
-      tag: "Specialty",
+      name: "Full-Husked Coconuts",
+      desc: "Raw coconuts with completely stripped husks (hard shell only). Cleaned, polished, and packed securely, ideal for coconut oil and derivative manufacturing.",
+      tag: "Industrial Grade",
+      image: "/fullHusked.jpeg", // <-- Ubah jadi fullHusked.jpeg
     },
   ];
 
   return (
-    <main className="flex min-h-screen flex-col bg-slate-50 pt-20">
+    <main className="flex min-h-screen flex-col bg-slate-50">
       {/* 1. HERO SECTION */}
-      <section className="relative w-full min-h-[85vh] flex flex-col items-center justify-center text-center px-6 md:px-16 text-white overflow-hidden">
+      {/* 1. HERO SECTION */}
+      <section className="relative w-full min-h-[85vh] flex flex-col items-center justify-center text-center px-6 md:px-16 pt-28 md:pt-24 pb-12 text-white overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center z-0 scale-105"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1920&auto=format&fit=crop')`,
-          }}
+          style={{ backgroundImage: `url('/background.jpeg')` }} // <-- Ganti sesuai nama file fotomu di folder public
         ></div>
-        <div className="absolute inset-0 bg-slate-950/70 z-10"></div>
+
+        {/* ... sisa kode teks Hero di bawahnya biarkan tetap sama ... */}
+        <div className="absolute inset-0 bg-slate-950/35 z-10"></div>
         <div className="relative z-20 flex flex-col items-center">
           <div className="mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-slate-700 text-sm font-semibold text-green-400 backdrop-blur-md shadow-sm">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
@@ -40,11 +45,11 @@ export default function Home() {
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold mb-6 leading-tight tracking-tight text-white drop-shadow-md">
             Reliable Supply Chain for <br className="hidden md:block" />
-            <span className="text-green-400">Indonesia's Best</span> Commodities
+            <span className="text-green-400">Indonesia's Best</span> Coconuts
           </h1>
           <p className="text-base md:text-lg lg:text-xl mb-10 max-w-3xl text-slate-200 drop-shadow">
             Your trusted partner in trading and logistics. We export premium
-            Coconuts and Jengkol with seamless delivery, competitive pricing,
+            Whole, Semi-Husked, and Full-Husked Coconuts with seamless delivery
             and strict quality control.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
@@ -55,7 +60,7 @@ export default function Home() {
               Request Freight Quote
             </Link>
             <a
-              href="https://wa.me/6281274411106?text=Hello%20Recima%20Maju%20Jaya%20Sukses,%20I%20would%20like%20to%20talk%20with%20your%20sales%20team."
+              href="https://wa.me/6281372227717?text=Hello%20Recima%20Maju%20Jaya%20Sukses,%20I%20would%20like%20to%20talk%20with%20your%20sales%20team."
               target="_blank"
               rel="noopener noreferrer"
               className="bg-slate-900/60 backdrop-blur-md border-2 border-slate-600 hover:bg-slate-800 text-white px-8 py-3.5 rounded-lg font-semibold transition-all w-full sm:w-auto text-center"
@@ -74,14 +79,14 @@ export default function Home() {
               Company Profile
             </h2>
             <h3 className="text-3xl md:text-4xl font-extrabold mb-6 text-slate-900 leading-tight">
-              Empowering Indonesian Agriculture for the Global Market
+              Empowering Indonesian Coconut Agriculture for the Global Market
             </h3>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
               <strong>PT. Recima Maju Jaya Sukses</strong> is a premier
               agricultural export and logistics company based in Indonesia. We
-              specialize in bridging the gap between local farmers and
-              international markets, ensuring that Indonesia's finest
-              commodities reach global destinations with uncompromised quality.
+              specialize in bridging the gap between local coconut farmers and
+              international markets, ensuring that Indonesia&apos;s finest
+              coconuts reach global destinations with uncompromised quality.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
               Unlike traditional brokers, we take full control of our supply
@@ -90,41 +95,50 @@ export default function Home() {
               documentation and freight forwarding.
             </p>
           </div>
-          <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4">
-            <div className="bg-slate-100 h-48 rounded-2xl flex items-center justify-center text-slate-400 font-medium">
-              Image: Plantation
+
+          {/* Bagian Kanan: 2 Foto Perusahaan Kotak Penuh */}
+          <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4 md:gap-6 items-center">
+            <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-md bg-slate-100 group">
+              <Image
+                src="/plantation.jpeg"
+                alt="PT. Recima Maju Jaya Sukses Plantation"
+                fill
+                className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              />
             </div>
-            <div className="bg-slate-100 h-48 rounded-2xl flex items-center justify-center text-slate-400 font-medium mt-8">
-              Image: Warehouse
+
+            <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-md bg-slate-100 mt-6 md:mt-10 group">
+              <Image
+                src="/warehouse.jpeg"
+                alt="PT. Recima Maju Jaya Sukses Warehouse"
+                fill
+                className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. WHY RECIMA (Design Hitam Elegan - FULL ENGLISH) */}
+      {/* 3. WHY RECIMA (Design Hitam Elegan - FOCUS COCONUTS) */}
       <section className="w-full bg-[#0a0a0a] text-white">
         <div className="flex flex-col lg:flex-row">
-          {/* Bagian Kiri: Area Foto Placeholder */}
-          <div className="w-full lg:w-1/2 min-h-[400px] lg:min-h-[600px] relative bg-slate-800 flex items-center justify-center border-b lg:border-b-0 lg:border-r border-slate-700">
-            <div className="text-center p-8">
-              <svg
-                className="w-16 h-16 text-slate-500 mx-auto mb-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-              <span className="text-slate-400 font-medium text-lg">
-                Coconut / Jengkol Processing Image Area
-              </span>
-              <p className="text-slate-500 text-sm mt-2">
-                Insert your processing or warehouse image here
+          {/* Bagian Kiri: Foto Asli Kamu */}
+          <div className="w-full lg:w-1/2 min-h-[450px] lg:min-h-[600px] relative bg-slate-900 overflow-hidden flex items-center justify-center border-b lg:border-b-0 lg:border-r border-slate-700">
+            {/* Pastikan file foto kamu sudah dimasukkan ke folder public dengan nama foto-aan.jpg */}
+            <Image
+              src="/kelapa.jpg"
+              alt="PT. Recima Maju Jaya Sukses"
+              fill
+              className="object-cover object-center transition-transform duration-500 hover:scale-105"
+            />
+
+            {/* Overlay gelap transparan */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+
+            {/* Caption Nama & Jabatan di Pojok Bawah Foto */}
+            <div className="absolute bottom-6 left-6 right-6 bg-slate-950/80 backdrop-blur-md border border-slate-700 p-4 rounded-xl">
+              <p className="text-green-400 text-xs">
+                Founder & Operations Lead - PT. Recima Maju Jaya Sukses
               </p>
             </div>
           </div>
@@ -138,15 +152,16 @@ export default function Home() {
             </div>
             <h3 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
               The Global Demand for{" "}
-              <span className="text-green-500">Premium Coconuts & Jengkol</span>{" "}
+              <span className="text-green-500">
+                Premium Indonesian Coconuts
+              </span>{" "}
               is Rising.
             </h3>
             <p className="text-slate-300 mb-10 leading-relaxed text-sm md:text-base">
-              Indonesia is one of the world's finest agricultural exporters. We
-              source directly from selected plantations—supplying whole
-              coconuts, semi-husked coconuts, and Grade-A jengkol with full
-              traceability, consistent quality, and complete export compliance
-              documentation.
+              Indonesia is one of the world's finest coconut exporters. We
+              source directly from selected plantations—supplying Whole,
+              Semi-Husked, and Full-Husked Coconuts with full traceability,
+              consistent quality, and complete export compliance documentation.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10 mb-12">
               <div>
@@ -154,8 +169,8 @@ export default function Home() {
                   Grade A & Premium
                 </h4>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Strictly sorted based on size, moisture, and quality. We
-                  guarantee a consistent year-round supply for FCL shipments.
+                  Strictly sorted based on maturity, water content, and shell
+                  hardness. Guaranteed consistent year-round supply for FCL.
                 </p>
               </div>
               <div>
@@ -163,8 +178,8 @@ export default function Home() {
                   Custom Packaging & OEM
                 </h4>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Available in mesh bags, PP woven bags, or custom retail
-                  packaging. Your brand, your specifications, your packaging.
+                  Available in mesh bags, PP woven bags, or industrial packing.
+                  Your brand, your specifications, your packaging.
                 </p>
               </div>
               <div>
@@ -173,7 +188,7 @@ export default function Home() {
                 </h4>
                 <p className="text-sm text-slate-400 leading-relaxed">
                   Capable of supplying dozens of containers per month to fulfill
-                  the demands of global industries and wholesale distributors.
+                  global industrial and wholesale distributor demands.
                 </p>
               </div>
               <div>
@@ -225,8 +240,9 @@ export default function Home() {
               </div>
               <div className="w-full md:w-2/3">
                 <p className="text-slate-600 leading-relaxed text-lg">
-                  Partnering directly with local farmers. Rigorous multi-stage
-                  sorting process at our warehouse to reject defective items.
+                  Partnering directly with local coconut farmers. Rigorous
+                  multi-stage sorting process at our warehouse to inspect water
+                  content and shell quality.
                 </p>
               </div>
             </div>
@@ -238,8 +254,8 @@ export default function Home() {
               </div>
               <div className="w-full md:w-2/3">
                 <p className="text-slate-600 leading-relaxed text-lg">
-                  Custom cleaning and packing according to buyer's
-                  specifications, including OEM requests.
+                  Custom husk trimming (Whole, Semi-Husked, or Full-Husked) and
+                  secure packing according to buyer's specifications.
                 </p>
               </div>
             </div>
@@ -281,8 +297,7 @@ export default function Home() {
               Our Core Commodities
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-              Explore our premium agricultural products, ready for global
-              export.
+              Explore our premium coconut products, ready for global export.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -291,11 +306,14 @@ export default function Home() {
                 key={product.id}
                 className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-green-500 transition-all duration-300 group hover:-translate-y-1 hover:shadow-xl flex flex-col shadow-sm"
               >
-                <div className="w-full h-52 bg-slate-100 rounded-xl mb-6 flex items-center justify-center text-slate-400 group-hover:bg-slate-200 transition-colors relative overflow-hidden">
-                  <span className="text-sm font-medium">
-                    Image: {product.name}
-                  </span>
-                  <div className="absolute top-3 right-3 bg-white text-green-700 text-xs font-bold px-3 py-1.5 rounded-full border border-green-200 shadow-sm">
+                <div className="w-full h-56 bg-slate-100 rounded-xl mb-6 relative overflow-hidden">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-sm text-green-700 text-xs font-bold px-3 py-1.5 rounded-full border border-green-200 shadow-sm z-10">
                     {product.tag}
                   </div>
                 </div>

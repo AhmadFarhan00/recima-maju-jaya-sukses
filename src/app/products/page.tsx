@@ -1,139 +1,136 @@
 import Link from "next/link";
+import Image from "next/image";
 
-export default function Products() {
-  const products = [
+export default function ProductsPage() {
+  const coconutProducts = [
     {
       id: 1,
       name: "Fresh Whole Coconuts",
-      desc: "Premium grade whole coconuts sourced directly from top plantations. High water content, thick meat, and carefully sorted for export.",
-      specs: [
-        "Weight: 800g - 1.2kg per piece",
-        "Packaging: Mesh bags (20-25 pcs/bag)",
-        "MOQ: 1x20ft Container",
-        "Supply Ability: 10 Containers / Month",
-      ],
+      subtitle: "Traditional export-grade whole coconuts with complete husk.",
+      image: "/wholeCoconnut.jpeg",
       tag: "Top Export",
+      specs: {
+        weight: "900g - 1.2kg per piece",
+        moq: "1 × 20ft Container (approx. 20-22 MT)",
+        packaging: "Mesh bags (20-25 pcs/bag) or loose loading",
+        supplyAbility: "12 Containers / Month",
+        maturity: "11 - 12 months old",
+        waterContent: "High natural sweetness, min. 300-400ml",
+      },
+      desc: "Our whole coconuts are harvested at the optimal maturity stage to ensure maximum water volume and thick, rich meat. Perfect for fresh wholesale markets and retail distribution worldwide.",
     },
     {
       id: 2,
       name: "Semi-Husked Coconuts",
-      desc: "Fresh coconuts with partially removed husks for optimal shelf-life and efficient container loading. Ideal for industrial and retail markets.",
-      specs: [
-        "Weight: 700g - 1.0kg per piece",
-        "Packaging: PP Bags (50 pcs/bag)",
-        "MOQ: 1x20ft Container",
-        "Supply Ability: 15 Containers / Month",
-      ],
+      subtitle:
+        "Partially dehusked for optimized shipping volume and extended shelf-life.",
+      image: "/semiHusked.jpeg",
       tag: "Best Value",
+      specs: {
+        weight: "800g - 1.1kg per piece",
+        moq: "1 × 20ft Container",
+        packaging: "Woven PP bags or Mesh bags",
+        supplyAbility: "15 Containers / Month",
+        maturity: "11 - 12 months old",
+        shelfLife: "Extended durability for ocean transit",
+      },
+      desc: "Semi-husked coconuts strike the ideal balance between protection and space efficiency inside shipping containers. Widely favored by food processing plants and international importers.",
     },
     {
       id: 3,
-      name: "Premium Jengkol (Dogfruit)",
-      desc: "Fresh, mature, and hand-selected Jengkol (Archidendron pauciflorum). Cleaned and packed securely to maintain quality during transit.",
-      specs: [
-        "Quality: Grade A, Mature & Fresh",
-        "Packaging: 25kg / 50kg PP Woven Bags",
-        "MOQ: 5 Metric Tons",
-        "Supply Ability: 50 MT / Month",
-      ],
-      tag: "Specialty",
+      name: "Full-Husked Coconuts (Husked / Naked)",
+      subtitle:
+        "Completely stripped hard-shell coconuts, ready for industrial processing.",
+      image: "/fullHusked.jpeg",
+      tag: "Industrial Grade",
+      specs: {
+        weight: "600g - 900g per piece",
+        moq: "1 × 20ft Container",
+        packaging: "Heavy-duty PP woven bags (approx. 25-50 kg/bag)",
+        supplyAbility: "10 Containers / Month",
+        processing: "Cleaned, fiber-trimmed, and shell-inspected",
+        application: "Coconut milk, desiccated coconut, and oil extraction",
+      },
+      desc: "Fully husked coconuts maximize container load capacity and minimize waste for industrial manufacturers. Every nut undergoes strict quality checks to guarantee zero mold and high kernel yield.",
     },
   ];
 
   return (
-    <main className="flex min-h-screen flex-col bg-slate-50 pt-32 pb-24 text-slate-900">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
-        <div className="text-center mb-20">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
-            Our Commodities
+    <main className="min-h-screen bg-slate-50 pt-28 pb-20 px-6 md:px-16 text-slate-900">
+      <div className="max-w-7xl mx-auto">
+        {/* Header Title */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-xs font-bold text-green-600 uppercase tracking-widest bg-green-50 px-3 py-1.5 rounded-full border border-green-200">
+            Export Commodities Catalogue
+          </span>
+          <h1 className="text-3xl md:text-5xl font-extrabold mt-4 mb-4 tracking-tight">
+            Premium Indonesian Coconut Products
           </h1>
-          <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-            Explore our export-ready agricultural products. We guarantee
-            rigorous quality control from harvesting to container stuffing.
+          <p className="text-slate-600 text-base md:text-lg">
+            Sourced directly from top agricultural plantations in Indonesia.
+            Processed, sorted, and packed to meet strict international B2B
+            quality standards.
           </p>
         </div>
 
-        <div className="space-y-16">
-          {products.map((product, index) => (
+        {/* Product List */}
+        <div className="space-y-12">
+          {coconutProducts.map((item) => (
             <div
-              key={product.id}
-              className={`flex flex-col md:flex-row gap-10 items-center bg-white border border-slate-200 shadow-sm rounded-3xl p-8 md:p-10 ${index % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
+              key={item.id}
+              className="bg-white border border-slate-200 rounded-3xl p-8 md:p-10 shadow-sm hover:border-green-500 transition-all duration-300 flex flex-col lg:flex-row gap-8 items-center"
             >
-              <div className="w-full md:w-5/12 h-64 md:h-80 bg-slate-100 rounded-2xl flex flex-col items-center justify-center text-slate-400 relative overflow-hidden group">
-                <span className="text-sm font-bold z-10">
-                  Image: {product.name}
-                </span>
-                <div className="absolute top-4 right-4 bg-white text-green-700 text-xs font-bold px-4 py-1.5 rounded-full border border-green-200 shadow-sm z-10">
-                  {product.tag}
+              {/* Product Image */}
+              <div className="w-full lg:w-2/5 h-72 bg-slate-100 rounded-2xl relative overflow-hidden group">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm text-green-700 text-xs font-bold px-3.5 py-1.5 rounded-full border border-green-200 shadow-sm z-10">
+                  {item.tag}
                 </div>
-                <div className="absolute inset-0 bg-slate-200/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
 
-              <div className="w-full md:w-7/12">
-                <h2 className="text-3xl font-extrabold mb-4 text-slate-900">
-                  {product.name}
+              {/* Details Content */}
+              <div className="w-full lg:w-3/5 flex flex-col">
+                <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-1">
+                  {item.name}
                 </h2>
-                <p className="text-slate-600 mb-8 leading-relaxed font-medium">
-                  {product.desc}
+                <p className="text-sm font-semibold text-green-600 mb-4">
+                  {item.subtitle}
+                </p>
+                <p className="text-slate-600 text-base mb-6 leading-relaxed">
+                  {item.desc}
                 </p>
 
-                <h4 className="text-lg font-bold text-slate-900 mb-4 border-b border-slate-100 pb-2">
-                  Technical Specifications
-                </h4>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                  {product.specs.map((spec, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-3 text-slate-600 font-medium text-sm"
-                    >
-                      <svg
-                        className="w-5 h-5 text-green-500 shrink-0 mt-0.5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={3}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      {spec}
-                    </li>
+                {/* Technical Specs Grid */}
+                <div className="bg-slate-50 border border-slate-100 rounded-2xl p-5 mb-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                  {Object.entries(item.specs).map(([key, value], idx) => (
+                    <div key={idx} className="flex flex-col">
+                      <span className="text-slate-400 uppercase text-[0.65rem] font-bold tracking-wider">
+                        {key}
+                      </span>
+                      <span className="text-slate-800 font-semibold mt-0.5">
+                        {value}
+                      </span>
+                    </div>
                   ))}
-                </ul>
+                </div>
 
+                {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     href="/contact"
-                    className="bg-green-600 hover:bg-green-700 text-white px-8 py-3.5 rounded-lg font-bold transition-all shadow-md shadow-green-600/20 text-center"
+                    className="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3.5 rounded-xl transition-all text-center shadow-lg shadow-green-600/20"
                   >
-                    Request Quote
+                    Request Quote for This Product
                   </Link>
-                  <button className="bg-white border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 px-8 py-3.5 rounded-lg font-bold transition-all text-center">
-                    Download Specs PDF
-                  </button>
                 </div>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-24 text-center bg-green-50 border border-green-200 rounded-3xl p-10 md:p-16 shadow-sm">
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4 text-slate-900">
-            Need Custom Packaging or OEM?
-          </h2>
-          <p className="text-slate-600 mb-8 max-w-2xl mx-auto font-medium">
-            We offer private label packaging and custom sorting sizes for bulk
-            orders. Let us know your specific market requirements.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-white border border-slate-200 text-slate-900 hover:bg-slate-50 hover:border-slate-300 px-8 py-3.5 rounded-lg font-bold transition-all shadow-sm"
-          >
-            Talk to Our Experts
-          </Link>
         </div>
       </div>
     </main>
