@@ -27,7 +27,7 @@ export default function Footer() {
             <div className="flex items-center space-x-3">
               {/* Instagram */}
               <a
-                href="https://instagram.com/username_kamu"
+                href="https://instagram.com/recima.majujaya.sukses"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -78,7 +78,7 @@ export default function Footer() {
 
               {/* LinkedIn */}
               <a
-                href="https://linkedin.com/company/nama-perusahaan"
+                href="https://www.linkedin.com/in/recima-majujaya-sukses-8315463a5?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
