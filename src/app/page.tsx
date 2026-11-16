@@ -281,7 +281,7 @@ export default function Home() {
               <div className="w-full md:w-2/3">
                 <p className="text-slate-600 leading-relaxed text-lg">
                   FCL container stuffing directly at our bays, shipped via
-                  trusted lines (FOB, CIF, or CFR).
+                  trusted lines (FOB).
                 </p>
               </div>
             </div>
