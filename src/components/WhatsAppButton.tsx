@@ -1,6 +1,6 @@
 export default function WhatsAppButton() {
   // Ganti dengan nomor WhatsApp kamu (tanpa + atau 0 di depan, langsung mulai dengan 62)
-  const phoneNumber = "6281372227717";
+  const phoneNumber = "6282369456898";
 
   // Pesan default saat klien klik tombol
   const defaultMessage =

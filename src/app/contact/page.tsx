@@ -39,7 +39,7 @@ export default function ContactPage() {
                 Email: rendyceo@recimamajujayasukses.com
               </p>
               <p className="text-slate-600 text-sm">
-                WhatsApp: +62 813-7222-7717
+                WhatsApp: +62 823-6945-6898
               </p>
             </div>
 

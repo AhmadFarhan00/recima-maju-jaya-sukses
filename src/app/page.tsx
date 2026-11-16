@@ -60,7 +60,7 @@ export default function Home() {
               Request Freight Quote
             </Link>
             <a
-              href="https://wa.me/6281372227717?text=Hello%20Recima%20Maju%20Jaya%20Sukses,%20I%20would%20like%20to%20talk%20with%20your%20sales%20team."
+              href="https://wa.me/6282369456898?text=Hello%20Recima%20Maju%20Jaya%20Sukses,%20I%20would%20like%20to%20talk%20with%20your%20sales%20team."
               target="_blank"
               rel="noopener noreferrer"
               className="bg-slate-900/60 backdrop-blur-md border-2 border-slate-600 hover:bg-slate-800 text-white px-8 py-3.5 rounded-lg font-semibold transition-all w-full sm:w-auto text-center"
