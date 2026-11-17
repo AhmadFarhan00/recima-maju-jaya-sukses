@@ -72,7 +72,7 @@ ${formData.message}`;
                 Head Office
               </h2>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Panyabungan, Mandailing Natal, Sumatera Utara, Indonesia.
+                Lubuk Alung, padang pariaman, Sumatera Barat, Indonesia.
               </p>
             </div>
 
