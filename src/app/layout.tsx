@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     "Agricultural Export Logistics Indonesia",
   ],
   icons: {
-    icon: "/logo.png", // <-- Sesuaikan dengan nama file logo di folder public (misal: /logo.png atau /rms-logo.png)
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: [{ url: "/icon.png", sizes: "1080x1080", type: "image/png" }],
+    shortcut: "/icon.png",
+    apple: "/icon.png",
   },
   openGraph: {
     title: "PT. Recima Maju Jaya Sukses | Export & Logistics",
