@@ -5,52 +5,54 @@ export default function Home() {
   const products = [
     {
       id: 1,
-      name: "Fresh Whole Coconuts",
-      desc: "Fresh mature whole coconuts with full husk intact. Sourced directly from top plantations, high water content, and thick white meat, carefully sorted for export.",
-      tag: "Top Export",
-      image: "/wholeCoconnut.jpeg", // <-- Sesuaikan dengan nama file di folder public
+      name: "Semi-Husked Coconuts",
+      desc: "Grade A mature coconuts with partially removed husks and a protective coir cap over the eyes for optimal shelf-life and maximum container loading efficiency.",
+      tag: "Grade A • Top Export",
+      image: "/semiHusked.jpeg",
+      catalogHref: "/catalog#semi-husked-coconut",
     },
     {
       id: 2,
-      name: "Semi-Husked Coconuts",
-      desc: "Coconuts with partially removed husks designed for optimal shelf-life and maximum container loading efficiency. Highly demanded by global industrial processors.",
-      tag: "Best Value",
-      image: "/semiHusked.jpeg", // <-- Ubah jadi semiHusked.jpeg
+      name: "Full-Husked Coconuts",
+      desc: "Grade A raw coconuts with 100% stripped husks down to the clean hard brown shell. Sorted and packed securely, ideal for coconut milk, VCO, and desiccated coconut.",
+      tag: "Grade A • Industrial",
+      image: "/fullHusked.jpeg",
+      catalogHref: "/catalog#full-husked-coconut",
     },
     {
       id: 3,
-      name: "Full-Husked Coconuts",
-      desc: "Raw coconuts with completely stripped husks (hard shell only). Cleaned, polished, and packed securely, ideal for coconut oil and derivative manufacturing.",
-      tag: "Industrial Grade",
-      image: "/fullHusked.jpeg", // <-- Ubah jadi fullHusked.jpeg
+      name: "Fresh Whole Coconuts",
+      desc: "Grade A mature whole coconuts with full outer husk intact. Sourced directly from partner plantations in West Sumatra with high water content and thick white meat.",
+      tag: "Grade A • Whole",
+      image: "/wholeCoconnut.jpeg",
+      catalogHref: "/catalog#fresh-whole-coconut",
     },
   ];
 
   return (
     <main className="flex min-h-screen flex-col bg-slate-50">
       {/* 1. HERO SECTION */}
-      {/* 1. HERO SECTION */}
       <section className="relative w-full min-h-[85vh] flex flex-col items-center justify-center text-center px-6 md:px-16 pt-28 md:pt-24 pb-12 text-white overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center z-0 scale-105"
-          style={{ backgroundImage: `url('/background.jpeg')` }} // <-- Ganti sesuai nama file fotomu di folder public
+          style={{ backgroundImage: `url('/background.jpeg')` }}
         ></div>
 
-        {/* ... sisa kode teks Hero di bawahnya biarkan tetap sama ... */}
         <div className="absolute inset-0 bg-slate-950/35 z-10"></div>
         <div className="relative z-20 flex flex-col items-center">
           <div className="mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-slate-700 text-sm font-semibold text-green-400 backdrop-blur-md shadow-sm">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-            Global Trading & Logistics Provider
+            Global Trading &amp; Logistics Provider
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold mb-6 leading-tight tracking-tight text-white drop-shadow-md">
             Reliable Supply Chain for <br className="hidden md:block" />
-            <span className="text-green-400">Indonesia's Best</span> Coconuts
+            <span className="text-green-400">Indonesia&apos;s Best</span>{" "}
+            Coconuts
           </h1>
           <p className="text-base md:text-lg lg:text-xl mb-10 max-w-3xl text-slate-200 drop-shadow">
-            Your trusted partner in trading and logistics. We export premium
-            Whole, Semi-Husked, and Full-Husked Coconuts with seamless delivery
-            and strict quality control.
+            Your trusted partner in trading and logistics. We export Grade A
+            Semi-Husked, Full-Husked, and Fresh Whole Coconuts with seamless
+            delivery and strict quality control.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <Link
@@ -83,10 +85,11 @@ export default function Home() {
             </h3>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
               <strong>PT. Recima Maju Jaya Sukses</strong> is a premier
-              agricultural export and logistics company based in Indonesia. We
-              specialize in bridging the gap between local coconut farmers and
-              international markets, ensuring that Indonesia&apos;s finest
-              coconuts reach global destinations with uncompromised quality.
+              agricultural export and logistics company based in Padang
+              Pariaman, West Sumatra, Indonesia. We specialize in bridging the
+              gap between local coconut farmers and international markets,
+              ensuring that Indonesia&apos;s finest Grade A coconuts reach
+              global destinations with uncompromised quality.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
               Unlike traditional brokers, we take full control of our supply
@@ -122,9 +125,8 @@ export default function Home() {
       {/* 3. WHY RECIMA (Design Hitam Elegan - FOCUS COCONUTS) */}
       <section className="w-full bg-[#0a0a0a] text-white">
         <div className="flex flex-col lg:flex-row">
-          {/* Bagian Kiri: Foto Asli Kamu */}
+          {/* Bagian Kiri: Foto */}
           <div className="w-full lg:w-1/2 min-h-[450px] lg:min-h-[600px] relative bg-slate-900 overflow-hidden flex items-center justify-center border-b lg:border-b-0 lg:border-r border-slate-700">
-            {/* Pastikan file foto kamu sudah dimasukkan ke folder public dengan nama foto-aan.jpg */}
             <Image
               src="/kelapa.jpg"
               alt="PT. Recima Maju Jaya Sukses"
@@ -132,13 +134,11 @@ export default function Home() {
               className="object-cover object-center transition-transform duration-500 hover:scale-105"
             />
 
-            {/* Overlay gelap transparan */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
-            {/* Caption Nama & Jabatan di Pojok Bawah Foto */}
             <div className="absolute bottom-6 left-6 right-6 bg-slate-950/80 backdrop-blur-md border border-slate-700 p-4 rounded-xl">
               <p className="text-green-400 text-xs">
-                Founder & Operations Lead - PT. Recima Maju Jaya Sukses
+                Founder &amp; Operations Lead - PT. Recima Maju Jaya Sukses
               </p>
             </div>
           </div>
@@ -153,29 +153,30 @@ export default function Home() {
             <h3 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
               The Global Demand for{" "}
               <span className="text-green-500">
-                Premium Indonesian Coconuts
+                Grade A Indonesian Coconuts
               </span>{" "}
               is Rising.
             </h3>
             <p className="text-slate-300 mb-10 leading-relaxed text-sm md:text-base">
-              Indonesia is one of the world's finest coconut exporters. We
-              source directly from selected plantations—supplying Whole,
-              Semi-Husked, and Full-Husked Coconuts with full traceability,
-              consistent quality, and complete export compliance documentation.
+              Indonesia is one of the world&apos;s finest coconut exporters. We
+              source directly from selected plantations—supplying Grade A
+              Semi-Husked, Full-Husked, and Fresh Whole Coconuts with full
+              traceability, consistent quality, and complete export compliance
+              documentation.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10 mb-12">
               <div>
                 <h4 className="text-green-500 font-bold text-lg mb-2">
-                  Grade A & Premium
+                  100% Grade A Standard
                 </h4>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Strictly sorted based on maturity, water content, and shell
-                  hardness. Guaranteed consistent year-round supply for FCL.
+                  Strictly sorted based on 11–12 month maturity, high water
+                  content, and intact shell hardness for year-round FCL supply.
                 </p>
               </div>
               <div>
                 <h4 className="text-green-500 font-bold text-lg mb-2">
-                  Custom Packaging & OEM
+                  Custom Packaging &amp; OEM
                 </h4>
                 <p className="text-sm text-slate-400 leading-relaxed">
                   Available in mesh bags, PP woven bags, or industrial packing.
@@ -235,7 +236,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-start border-l-4 border-green-500 pl-6 md:pl-10">
               <div className="w-full md:w-1/3">
                 <h4 className="text-2xl font-bold text-slate-900">
-                  01. Sourcing & QC
+                  01. Sourcing &amp; QC
                 </h4>
               </div>
               <div className="w-full md:w-2/3">
@@ -249,13 +250,13 @@ export default function Home() {
             <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-start border-l-4 border-green-500 pl-6 md:pl-10">
               <div className="w-full md:w-1/3">
                 <h4 className="text-2xl font-bold text-slate-900">
-                  02. Processing & Packaging
+                  02. Processing &amp; Packaging
                 </h4>
               </div>
               <div className="w-full md:w-2/3">
                 <p className="text-slate-600 leading-relaxed text-lg">
-                  Custom husk trimming (Whole, Semi-Husked, or Full-Husked) and
-                  secure packing according to buyer's specifications.
+                  Custom husk trimming (Semi-Husked, Full-Husked, or Whole) and
+                  secure packing according to buyer&apos;s specifications.
                 </p>
               </div>
             </div>
@@ -275,13 +276,13 @@ export default function Home() {
             <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-start border-l-4 border-green-500 pl-6 md:pl-10">
               <div className="w-full md:w-1/3">
                 <h4 className="text-2xl font-bold text-slate-900">
-                  04. Freight & Shipping
+                  04. Freight &amp; Shipping
                 </h4>
               </div>
               <div className="w-full md:w-2/3">
                 <p className="text-slate-600 leading-relaxed text-lg">
                   FCL container stuffing directly at our bays, shipped via
-                  trusted lines (FOB).
+                  trusted lines (FOB / CIF).
                 </p>
               </div>
             </div>
@@ -297,7 +298,8 @@ export default function Home() {
               Our Core Commodities
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-              Explore our premium coconut products, ready for global export.
+              Explore our Grade A Indonesian coconut products, ready for global
+              export.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -306,7 +308,10 @@ export default function Home() {
                 key={product.id}
                 className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-green-500 transition-all duration-300 group hover:-translate-y-1 hover:shadow-xl flex flex-col shadow-sm"
               >
-                <div className="w-full h-56 bg-slate-100 rounded-xl mb-6 relative overflow-hidden">
+                <Link
+                  href="/products"
+                  className="block w-full h-56 bg-slate-100 rounded-xl mb-6 relative overflow-hidden"
+                >
                   <Image
                     src={product.image}
                     alt={product.name}
@@ -316,10 +321,12 @@ export default function Home() {
                   <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-sm text-green-700 text-xs font-bold px-3 py-1.5 rounded-full border border-green-200 shadow-sm z-10">
                     {product.tag}
                   </div>
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-slate-900">
-                  {product.name}
-                </h3>
+                </Link>
+                <Link href="/products">
+                  <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-green-700 transition-colors">
+                    {product.name}
+                  </h3>
+                </Link>
                 <p className="text-slate-600 text-sm mb-8 leading-relaxed flex-grow">
                   {product.desc}
                 </p>
@@ -328,7 +335,7 @@ export default function Home() {
                     FCL / LCL Available
                   </span>
                   <Link
-                    href="/products"
+                    href={product.catalogHref}
                     className="text-sm font-bold text-green-700 hover:text-white hover:bg-green-600 px-4 py-2 rounded-lg transition-colors"
                   >
                     Check Specs &rarr;
@@ -336,6 +343,15 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              href="/products"
+              className="inline-flex items-center gap-2 border-2 border-emerald-900 text-emerald-900 hover:bg-emerald-900 hover:text-white font-bold text-sm px-6 py-3 rounded-xl transition-colors"
+            >
+              Explore Product Line Overview &rarr;
+            </Link>
           </div>
         </div>
       </section>
