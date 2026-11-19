@@ -86,6 +86,18 @@ export default function Navbar() {
             Products
           </Link>
           <Link
+            href="/catalog"
+            className={`transition-colors font-semibold ${
+              isTransparent
+                ? "text-white hover:text-green-400 drop-shadow"
+                : pathname === "/catalog"
+                  ? "text-green-600"
+                  : "text-slate-700 hover:text-green-600"
+            }`}
+          >
+            Catalog
+          </Link>
+          <Link
             href="/contact"
             className={`transition-colors font-semibold ${
               isTransparent
@@ -172,6 +184,17 @@ export default function Navbar() {
             className="block py-2.5 text-base font-semibold text-slate-800 hover:text-green-600 border-b border-slate-100"
           >
             Products
+          </Link>
+          <Link
+            href="/catalog"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className={`block py-2.5 text-base font-semibold border-b border-slate-100 ${
+              pathname === "/catalog"
+                ? "text-green-600"
+                : "text-slate-800 hover:text-green-600"
+            }`}
+          >
+            Catalog
           </Link>
           <Link
             href="/contact"
